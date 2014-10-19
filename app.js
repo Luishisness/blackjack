@@ -2,14 +2,26 @@
 var prompt = require('sync-prompt').prompt;
 
 /*///////////////////// GENERATE CARD FUNCTION////////////////////*/
-var generateCards=function(){
+/*var generateCards=function(){
 	var deckOfCards=[{suit:'♣', face:'1'}, {suit:'♣', face:'2'},{suit:'♣', face:'3'},{suit:'♣', face:'4'},{suit:'♣', face:'5'},{suit:'♣', face:'6'},{suit:'♣', face:'7'},{suit:'♣', face:'8'},{suit:'♣', face:'9'},{suit:'♣', face:'J'},{suit:'♣', face:'Q'},{suit:'♣', face:'K'},{suit:'♣', face:'A'},
 					 {suit:'♠', face:'1'}, {suit:'♠', face:'2'},{suit:'♠', face:'3'},{suit:'♠', face:'4'},{suit:'♠', face:'5'},{suit:'♠', face:'6'},{suit:'♠', face:'7'},{suit:'♠', face:'8'},{suit:'♠', face:'9'},{suit:'♠', face:'J'},{suit:'♠', face:'Q'},{suit:'♠', face:'K'},{suit:'♠', face:'A'},
 					 {suit:'♥', face:'1'}, {suit:'♥', face:'2'},{suit:'♥', face:'3'},{suit:'♥', face:'4'},{suit:'♥', face:'5'},{suit:'♥', face:'6'},{suit:'♥', face:'7'},{suit:'♥', face:'8'},{suit:'♥', face:'9'},{suit:'♥', face:'J'},{suit:'♥', face:'Q'},{suit:'♥', face:'K'},{suit:'♥', face:'A'},
 					 {suit:'♠', face:'1'}, {suit:'♠', face:'2'},{suit:'♠', face:'3'},{suit:'♠', face:'4'},{suit:'♠', face:'5'},{suit:'♠', face:'6'},{suit:'♠', face:'7'},{suit:'♠', face:'8'},{suit:'♠', face:'9'},{suit:'♠', face:'J'},{suit:'♠', face:'Q'},{suit:'♠', face:'K'},{suit:'♠', face:'A'}];
  
   return deckOfCards;				 
+};*/
+var generateCards = function() {
+	var suits = ['♠','♥','♦','♣'],
+        faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'],
+        cards = [];
+	for(var i = 0; i < suits.length; i++) {
+		for(var j = 0; j < faces.length; j++) {
+			cards.push({'suit':suits[i], 'face':faces[j]}); 
+		}
+	}
+	return cards;
 };
+console.log(generateCards());
 
 /*//////////////////GENERATE SHUFFLED DECK FUNCTION////////////////*/
 var shuffle=function (cards) {
